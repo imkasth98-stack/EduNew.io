@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduNews - ប្លុកព័ត៌មាន និងការអប់រំ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('edunews-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="container nav">
+
+            <div class="logo">
+                <span>Edu</span>News by sith
+            </div>
+            
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                ម៉ឺនុយ
+            </button>
+
+            <nav id="primary-nav">
+                <a href="#" class="active">ទំព័រដើម</a>
+                <a href="#news">ព័ត៌មាន</a>
+                <a href="#education">ការអប់រំ</a>
+                <a href="#technology">បច្ចេកវិទ្យា</a>
+                <a href="#submit-post" class="nav-submit-link">✍️ បញ្ចូលព័ត៌មាន</a>
+                <a href="#contact">ទំនាក់ទំនង</a>
+                <a href="#about">អំពីយើង</a>
+            </nav>
+
+            <div class="nav-actions">
+                <form class="search" role="search">
+                    <input type="text" placeholder="ស្វែងរក...">
+                    <button type="submit" aria-label="ស្វែងរក">ស្វែងរក</button>
+                </form>
+
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" role="switch" aria-checked="false" aria-label="ប្តូរពន្លឺ / ងងឹត (Dark & Light Mode)" title="ប្តូរ Dark / Light Mode">
+                    <span class="theme-toggle-track" aria-hidden="true">
+                        <span class="theme-toggle-thumb">
+                            <span class="theme-icon sun-icon">☀️</span>
+                            <span class="theme-icon moon-icon">🌙</span>
+                        </span>
+                    </span>
+                    <span class="theme-toggle-label">ពន្លឺ</span>
+                </button>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <p class="category">ព័ត៌មានអប់រំ និងបច្ចេកវិទ្យា</p>
+
+                <h1>
+                    រៀនថ្ងៃនេះ
+                    <span>កសាងថ្ងៃស្អែក</span>
+                </h1>
+
+                <p>
+                    សូមស្វាគមន៍មកកាន់ EduNews ដែលជាប្លុកទំនើបស្តីពីការអប់រំ
+                    បច្ចេកវិទ្យា ការរៀនសូត្រ សិស្សនិស្សិត និងព័ត៌មានថ្មីៗ
+                    ពីជុំវិញពិភពលោក។
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#education" class="btn">
+                        ស្វែងយល់ពីអត្ថបទ
+                    </a>
+
+                    <button class="hero-theme-pill" id="hero-theme-toggle" type="button" role="switch" aria-checked="false" aria-label="ប្តូរ Dark / Light Mode តាមចំណូលចិត្ត" title="ប្តូរពន្លឺ / ងងឹត">
+                        <span class="pill-icon" aria-hidden="true">🌓</span>
+                        <span class="pill-text">ប្តូរ Dark / Light</span>
+                    </button>
+                </div>
+
+                <!-- User Interests Section -->
+                <div class="user-interests" role="region" aria-label="ចំណាប់អារម្មណ៍របស់អ្នកប្រើប្រាស់ (User Interests)">
+                    <div class="interests-header">
+                        <span class="interests-title">ចំណាប់អារម្មណ៍របស់អ្នក (User Interests)៖</span>
+                    </div>
+                    <div class="interest-tags" role="toolbar" aria-label="តម្រងតាមចំណាប់អារម្មណ៍របស់អ្នកប្រើ">
+                        <button class="interest-btn active" type="button" role="button" data-topic="">ទាំងអស់</button>
+                        <button class="interest-btn" type="button" role="button" data-topic="បច្ចេកវិទ្យា">បច្ចេកវិទ្យា</button>
+                        <button class="interest-btn" type="button" role="button" data-topic="ការអប់រំ">ការអប់រំ</button>
+                        <button class="interest-btn" type="button" role="button" data-topic="ការសរសេរកូដ">ការសរសេរកូដ</button>
+                        <button class="interest-btn" type="button" role="button" data-topic="AI">AI</button>
+                        <button class="interest-btn" type="button" role="button" data-topic="អាជីព">អាជីព</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card">
+
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=85" alt="សៀវភៅនៅលើតុសិក្សា">
+                </div>
+
+                <div class="hero-card-content">
+                    <span>អត្ថបទពិសេស</span>
+
+                    <h2>
+                        អនាគតនៃការអប់រំក្នុងយុគសម័យឌីជីថល
+                    </h2>
+
+                    <p>
+                        ស្វែងយល់ថាតើបច្ចេកវិទ្យាកំពុងផ្លាស់ប្តូររបៀប
+                        រៀនរបស់សិស្ស និងការបង្រៀនរបស់គ្រូយ៉ាងដូចម្តេច។
+                    </p>
+
+                    <a href="#article-reader" class="read-article" data-page="article.html" data-title="អនាគតនៃការអប់រំក្នុងយុគសម័យឌីជីថល" data-content="បច្ចេកវិទ្យាឌីជីថលកំពុងធ្វើឱ្យការរៀនមានភាពបត់បែន និងងាយស្រួលជាងមុន។ សិស្សអាចចូលប្រើវគ្គសិក្សា ឧបករណ៍សហការ និងប្រភពចំណេះដឹងបានគ្រប់ពេល។">អានបន្ថែម →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LATEST NEWS ================= -->
+    <section class="section" id="news">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div>
+                    <p class="small-title">ព័ត៌មានថ្មីៗ</p>
+                    <h2>ព័ត៌មានចុងក្រោយ</h2>
+                </div>
+
+                <a href="#news" id="show-all-news">មើលទាំងអស់ →</a>
+            </div>
+
+
+            <div class="news-grid">
+
+                <article class="news-card">
+
+                    <div class="news-image technology">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="សិស្សកំពុងប្រើកុំព្យូទ័រ">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">បច្ចេកវិទ្យា</span>
+
+                        <h3 data-searchable>
+                            បច្ចេកវិទ្យាកំពុងផ្លាស់ប្តូរការអប់រំសម័យទំនើប
+                        </h3>
+
+                        <p data-searchable>
+                            ឧបករណ៍ឌីជីថលថ្មីៗកំពុងជួយសិស្ស
+                            រៀនបានលឿន និងមានប្រសិទ្ធភាពជាងមុន។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="បច្ចេកវិទ្យាកំពុងផ្លាស់ប្តូរការអប់រំសម័យទំនើប" data-content="ឧបករណ៍ឌីជីថល និងបណ្តាញអ៊ីនធឺណិតកំពុងធ្វើឱ្យការរៀនសូត្រមិនមានព្រំដែន។ សិស្សអាចស្វែងយល់មុខវិជ្ជាពីជុំវិញពិភពលោក និងអនុវត្តជាក់ស្តែងតាមកម្មវិធីកុំព្យូទ័រ។" data-page="article.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>២២ កញ្ញា ២០២៦</span>
+                            <span>អាន ៥ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-image school">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85" alt="ថ្នាក់រៀនទំនើប">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">ការអប់រំ</span>
+
+                        <h3 data-searchable>
+                            ហេតុអ្វីការអប់រំមានសារៈសំខាន់សម្រាប់សង្គម
+                        </h3>
+
+                        <p data-searchable>
+                            ការអប់រំផ្តល់ចំណេះដឹង ជំនាញ
+                            ទំនុកចិត្ត និងឱកាសដល់មនុស្ស។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="ហេតុអ្វីការអប់រំមានសារៈសំខាន់សម្រាប់សង្គម" data-content="ការអប់រំមិនគ្រាន់តែជាការទទួលបានសញ្ញាបត្រប៉ុណ្ណោះទេ តែវាជាការកសាងសមត្ថភាព ភាពច្នៃប្រឌិត និងការទទួលខុសត្រូវក្នុងសង្គមដើម្បីអនាគតរុងរឿង។" data-page="study-habits.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>២១ កញ្ញា ២០២៦</span>
+                            <span>អាន ៤ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-image ai">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85" alt="បញ្ញាសិប្បនិម្មិត និងការរៀន">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">AI និងបច្ចេកវិទ្យា</span>
+
+                        <h3 data-searchable>
+                            របៀបដែល AI កំពុងជួយសិស្ស
+                        </h3>
+
+                        <p data-searchable>
+                            បញ្ញាសិប្បនិម្មិតកំពុងក្លាយជាឧបករណ៍មានប្រយោជន៍
+                            សម្រាប់ការស្រាវជ្រាវ ការរៀន និងការច្នៃប្រឌិត។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="របៀបដែល AI កំពុងជួយសិស្ស" data-content="AI អាចដើរតួជាគ្រូជំនួយផ្ទាល់ខ្លួន ដោយឆ្លើយសំណួរស្មុគស្មាញ សង្ខេបអត្ថបទវែងៗ និងណែនាំលំហាត់ជាក់ស្តែងដើម្បីពង្រឹងសមត្ថភាពសិស្ស។" data-page="article.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>២០ កញ្ញា ២០២៦</span>
+                            <span>អាន ៦ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-image coding">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=85" alt="កុំព្យូទ័រសរសេរកូដ">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">ការសរសេរកូដ</span>
+
+                        <h3 data-searchable>
+                            ជំនាញសរសេរកូដសំខាន់ៗដែលសិស្សគួរចាប់ផ្តើមរៀន
+                        </h3>
+
+                        <p data-searchable>
+                            ការចាប់ផ្តើមរៀនភាសាសរសេរកូដដូចជា HTML, CSS និង JavaScript 
+                            ជួយសិស្សពង្រីកការគិតបែបឡូជីខល និងបង្កើតស្នាដៃជាក់ស្តែង។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="ជំនាញសរសេរកូដសំខាន់ៗដែលសិស្សគួរចាប់ផ្តើមរៀន" data-content="ការរៀនសរសេរកូដជួយបណ្តុះការគិតជាប្រព័ន្ធ ដោះស្រាយបញ្ហាស្មុគស្មាញ និងជាស្ពាននាំទៅរកឱកាសការងារបច្ចេកវិទ្យាដែលមានចំណូលខ្ពស់។" data-page="why-learn-coding.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>១៩ កញ្ញា ២០២៦</span>
+                            <span>អាន ៤ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-image study">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=85" alt="ការរៀនសូត្រជាក្រុម">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">គន្លឹះសិក្សា</span>
+
+                        <h3 data-searchable>
+                            យុទ្ធសាស្ត្ររៀនតាមអនឡាញឲ្យទទួលបានជោគជ័យខ្ពស់
+                        </h3>
+
+                        <p data-searchable>
+                            ការរៀបចំកាលវិភាគសិក្សា ការកត់ត្រាសង្ខេប និងការចូលរួមពិភាក្សាក្នុងក្រុម 
+                            ជួយបង្កើនការយល់ដឹង និងកាត់បន្ថយភាពធុញថប់។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="យុទ្ធសាស្ត្ររៀនតាមអនឡាញឲ្យទទួលបានជោគជ័យខ្ពស់" data-content="ការរៀនតាមអនឡាញទាមទារវិន័យខ្លួនឯងខ្ពស់។ ការបង្កើតបរិយាកាសសិក្សាស្ងប់ស្ងាត់ ការបែងចែកពេលវេលាសម្រាក និងការពិភាក្សាជាមួយមិត្តរួមថ្នាក់នឹងជួយឱ្យការសិក្សាមានប្រសិទ្ធភាពទ្វេដង។" data-page="study-habits.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>១៨ កញ្ញា ២០២៦</span>
+                            <span>អាន ៥ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div class="news-image security">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=85" alt="សុវត្ថិភាពប្រព័ន្ធឌីជីថល">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="tag">អាជីព</span>
+
+                        <h3 data-searchable>
+                            សុវត្ថិភាពឌីជីថល និងឱកាសការងារក្នុងវិស័យ Cybersecurity
+                        </h3>
+
+                        <p data-searchable>
+                            ការយល់ដឹងពីសុវត្ថិភាពអ៊ីនធឺណិតមិនត្រឹមតែការពារទិន្នន័យផ្ទាល់ខ្លួនប៉ុណ្ណោះទេ 
+                            ថែមទាំងជាជំនាញការងារដែលកំពុងមានតម្រូវការខ្ពស់។
+                        </p>
+
+                        <div class="card-footer-action">
+                            <a href="#article-reader" class="read-article" data-title="សុវត្ថិភាពឌីជីថល និងឱកាសការងារក្នុងវិស័យ Cybersecurity" data-content="នៅក្នុងពិភពឌីជីថល សន្តិសុខសាយប័រជាអាជីពដ៏មានសារៈសំខាន់បំផុត។ ស្ថាប័ននានាត្រូវការអ្នកជំនាញដើម្បីការពារទិន្នន័យ និងប្រព័ន្ធកុំព្យូទ័រពីការវាយប្រហារ។" data-page="it-career-guide.html">អានបន្ត →</a>
+                        </div>
+
+                        <div class="meta">
+                            <span>១៧ កញ្ញា ២០២៦</span>
+                            <span>អាន ៦ នាទី</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="section education-section" id="education">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div>
+                    <p class="small-title">មជ្ឈមណ្ឌលសិក្សា</p>
+                    <h2>អត្ថបទអប់រំ</h2>
+                </div>
+            </div>
+
+
+            <div class="education-layout">
+
+                <!-- Main Articles -->
+                <div class="articles">
+
+                    <article class="article">
+
+                        <div class="article-number">
+                            01
+                        </div>
+
+                        <div>
+                            <span class="tag">គន្លឹះសិក្សា</span>
+
+                            <h3>
+                                វិធីមានប្រសិទ្ធភាព ៧ យ៉ាង ដើម្បីកែលម្អទម្លាប់សិក្សា
+                            </h3>
+
+                            <p>
+                                ទម្លាប់សិក្សាល្អអាចជួយសិស្សគ្រប់គ្រងពេលវេលា
+                                យល់មុខវិជ្ជាពិបាក និងទទួលបានលទ្ធផលកាន់តែល្អ។
+                            </p>
+
+                            <a href="study-habits.html">អានអត្ថបទ →</a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-number">
+                            02
+                        </div>
+
+                        <div>
+                            <span class="tag">ការសរសេរកូដ</span>
+
+                            <h3>
+                                ហេតុអ្វីសិស្សគួររៀនសរសេរកម្មវិធី
+                            </h3>
+
+                            <p>
+                                ការសរសេរកម្មវិធីបង្រៀនការដោះស្រាយបញ្ហា
+                                ការគិតឡូជីខល ភាពច្នៃប្រឌិត និងជំនាញបច្ចេកទេស
+                                ដែលមានប្រយោជន៍សម្រាប់អាជីពជាច្រើន។
+                            </p>
+
+                            <a href="why-learn-coding.html">អានអត្ថបទ →</a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="article">
+
+                        <div class="article-number">
+                            03
+                        </div>
+
+                        <div>
+                            <span class="tag">អាជីព</span>
+
+                            <h3>
+                                របៀបជ្រើសរើសអាជីព IT ដែលសមស្រប
+                            </h3>
+
+                            <p>
+                                ស្វែងយល់ពីអាជីព IT ផ្សេងៗដូចជា
+                                ការអភិវឌ្ឍកម្មវិធី បណ្តាញ កុំព្យូទ័រពពក
+                                សន្តិសុខសាយប័រ និងវិទ្យាសាស្ត្រទិន្នន័យ។
+                            </p>
+
+                            <a href="it-career-guide.html">អានអត្ថបទ →</a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+
+                    <h3>ប្រធានបទពេញនិយម</h3>
+
+                    <div class="topic">
+                        <span class="topic-filter" tabindex="0" role="button">ការសរសេរកូដ</span>
+                        <b>24</b>
+                    </div>
+
+                    <div class="topic">
+                        <span class="topic-filter" tabindex="0" role="button">បច្ចេកវិទ្យា</span>
+                        <b>18</b>
+                    </div>
+
+                    <div class="topic">
+                        <span class="topic-filter" tabindex="0" role="button">គន្លឹះសិក្សា</span>
+                        <b>15</b>
+                    </div>
+
+                    <div class="topic">
+                        <span class="topic-filter" tabindex="0" role="button">អាជីព</span>
+                        <b>12</b>
+                    </div>
+
+                    <div class="topic">
+                        <span class="topic-filter" tabindex="0" role="button">AI</span>
+                        <b>10</b>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+    <section class="technology-section" id="technology">
+
+        <div class="container">
+
+            <div class="tech-content">
+
+                <div>
+                    <p class="small-title">បច្ចេកវិទ្យា និងការរៀនសូត្រ</p>
+
+                    <h2>
+                        ការអប់រំជួបជាមួយបច្ចេកវិទ្យា
+                    </h2>
+
+                    <p>
+                        ចាប់ពីថ្នាក់រៀនតាមអ៊ីនធឺណិតរហូតដល់បញ្ញាសិប្បនិម្មិត
+                        បច្ចេកវិទ្យាកំពុងបង្កើតឱកាសថ្មីៗសម្រាប់
+                        សិស្ស និងអ្នកអប់រំ។
+                    </p>
+
+                    <a href="#education" class="btn light-btn">
+                        ស្វែងយល់បន្ថែម
+                    </a>
+                </div>
+
+                <div class="tech-box">
+                    <div>AI</div>
+                    <div>WEB</div>
+                    <div>CODE</div>
+                    <div>DATA</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SUBMIT NEW INFORMATION ================= -->
+    <section class="section submit-section" id="submit-post">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div>
+                    <p class="small-title">ការចូលរួមពីអ្នកអាន</p>
+                    <h2>បញ្ចូលព័ត៌មាន ឬបង្កើតអត្ថបទថ្មី</h2>
+                </div>
+            </div>
+
+            <div class="submit-card">
+
+                <div class="submit-intro">
+                    <span class="submit-badge">✨ មុខងារសម្រាប់អ្នកប្រើប្រាស់</span>
+                    <h3>ចែករំលែកចំណេះដឹង និងព័ត៌មានរបស់អ្នកទៅកាន់អ្នកអាន</h3>
+                    <p>
+                        អ្នកអាចបញ្ចូលព័ត៌មាន អត្ថបទអប់រំ បច្ចេកវិទ្យា ឬគន្លឹះសិក្សាផ្ទាល់ខ្លួន។ 
+                        ព័ត៌មានដែលអ្នកបានបញ្ចូល នឹងបង្ហាញភ្លាមៗនៅលើវេបសាយ និងអាចស្វែងរកបានគ្រប់ពេល។
+                    </p>
+                </div>
+
+                <form id="create-post-form" class="submit-form" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="post-title">ចំណងជើងអត្ថបទ <span class="required">*</span></label>
+                            <input type="text" id="post-title" name="title" placeholder="ឧ. វិធីរៀនសរសេរកូដឱ្យឆាប់ចេះ..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="post-category">ប្រភេទព័ត៌មាន <span class="required">*</span></label>
+                            <select id="post-category" name="category" required>
+                                <option value="បច្ចេកវិទ្យា">បច្ចេកវិទ្យា</option>
+                                <option value="ការអប់រំ">ការអប់រំ</option>
+                                <option value="ការសរសេរកូដ">ការសរសេរកូដ</option>
+                                <option value="AI និងបច្ចេកវិទ្យា">AI និងបច្ចេកវិទ្យា</option>
+                                <option value="គន្លឹះសិក្សា">គន្លឹះសិក្សា</option>
+                                <option value="អាជីព">អាជីព</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="post-author">ឈ្មោះអ្នកនិពន្ធ ឬអ្នកចែករំលែក <span class="required">*</span></label>
+                            <input type="text" id="post-author" name="author" placeholder="ឧ. សុខា ឬ EduNews Member" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="post-readtime">រយៈពេលអានប៉ាន់ស្មាន</label>
+                            <input type="text" id="post-readtime" name="readtime" placeholder="ឧ. ៥ នាទី" value="៥ នាទី">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-image">តំណភ្ជាប់រូបភាព (Image URL)</label>
+                        <input type="url" id="post-image" name="image" placeholder="https://images.unsplash.com/photo-...">
+                        <div class="preset-images-wrapper">
+                            <span>ឬជ្រើសរើសរូបតំណាងរហ័ស៖</span>
+                            <div class="preset-buttons">
+                                <button type="button" class="preset-btn active" data-img="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85">បច្ចេកវិទ្យា</button>
+                                <button type="button" class="preset-btn" data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=85">ការសរសេរកូដ</button>
+                                <button type="button" class="preset-btn" data-img="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85">ការអប់រំ</button>
+                                <button type="button" class="preset-btn" data-img="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=85">AI</button>
+                                <button type="button" class="preset-btn" data-img="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=85">សន្តិសុខ IT</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-content">ខ្លឹមសារព័ត៌មាន ឬអត្ថបទលម្អិត <span class="required">*</span></label>
+                        <textarea id="post-content" name="content" rows="5" placeholder="សរសេររៀបរាប់ព័ត៌មាន ចំណេះដឹង ឬគន្លឹះដែលអ្នកចង់ចែករំលែកនៅទីនេះ..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-submit">
+                            <span>🚀</span> បញ្ចូលព័ត៌មាន (Publish Post)
+                        </button>
+                        <button type="reset" class="btn btn-reset">
+                            សម្អាត
+                        </button>
+                    </div>
+
+                    <div id="submit-alert" class="submit-alert" hidden></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEWSLETTER ================= -->
+    <section class="newsletter" id="newsletter">
+
+        <div class="container newsletter-content">
+
+            <div>
+                <p class="small-title">ទទួលព័ត៌មានថ្មីៗ</p>
+
+                <h2>
+                    ទទួលព័ត៌មានអប់រំក្នុងប្រអប់សាររបស់អ្នក
+                </h2>
+
+                <p>
+                    ចុះឈ្មោះដើម្បីទទួលបានអត្ថបទថ្មីៗអំពីការអប់រំ
+                    បច្ចេកវិទ្យា និងការរៀនសូត្រ។
+                </p>
+            </div>
+
+            <form>
+                <input
+                    type="email"
+                    placeholder="បញ្ចូលអាសយដ្ឋានអ៊ីមែលរបស់អ្នក"
+                >
+
+                <button type="submit">
+                    ចុះឈ្មោះ
+                </button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT & FEEDBACK ================= -->
+    <section class="section contact-section" id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div>
+                    <p class="small-title">ទំនាក់ទំនងមកយើង</p>
+                    <h2>ទាក់ទង និងផ្ញើសារសាកសួរព័ត៌មាន</h2>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info-card">
+                    <h3>ព័ត៌មានទំនាក់ទំនង</h3>
+                    <p>មានចម្ងល់ សំណួរ ឬចង់សហការជាមួយក្រុមការងារ EduNews? សូមទំនាក់ទំនងមកកាន់យើងខ្ញុំគ្រប់ពេល។</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <b>អ៊ីមែល</b>
+                                <a href="mailto:imkasth98@gmail.com">imkasth98@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <b>ទូរស័ព្ទ</b>
+                                <a href="tel:+855975445513">+855 97 544 551 3</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <b>ទីតាំង</b>
+                                <span>រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div>
+                                <b>ម៉ោងបម្រើការងារ</b>
+                                <span>ចន្ទ - សៅរ៍៖ 8:00 AM - 5:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <h3>ផ្ញើសារ ឬមតិយោបល់របស់អ្នក</h3>
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">ឈ្មោះរបស់អ្នក <span class="required">*</span></label>
+                                <input type="text" id="contact-name" name="name" placeholder="បញ្ចូលឈ្មោះ..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">អ៊ីមែល <span class="required">*</span></label>
+                                <input type="email" id="contact-email" name="email" placeholder="example@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone">លេខទូរស័ព្ទ</label>
+                                <input type="tel" id="contact-phone" name="phone" placeholder="+855 97 ...">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">ប្រធានបទ <span class="required">*</span></label>
+                                <input type="text" id="contact-subject" name="subject" placeholder="ឧ. សាកសួរព័ត៌មានវគ្គសិក្សា..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">សារ ឬព័ត៌មានដែលចង់ផ្ញើ <span class="required">*</span></label>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="សូមសរសេរសារ ឬចម្ងល់របស់អ្នកនៅទីនេះ..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">
+                            ✉️ ផ្ញើសារឥឡូវនេះ
+                        </button>
+
+                        <div id="contact-alert" class="submit-alert" hidden></div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="about">
+
+        <div class="container footer-grid">
+
+            <div>
+                <div class="logo">
+                    <span>Edu</span>News
+                </div>
+
+                <p>
+                    ប្លុកដែលចែករំលែកអំពីការអប់រំ បច្ចេកវិទ្យា
+                    ការរៀនសូត្រ និងព័ត៌មានមានប្រយោជន៍។
+                </p>
+            </div>
+
+
+            <div>
+                <h3>តំណភ្ជាប់រហ័ស</h3>
+
+                <a href="#">ទំព័រដើម</a>
+                <a href="#news">ព័ត៌មាន</a>
+                <a href="#education">ការអប់រំ</a>
+                <a href="#technology">បច្ចេកវិទ្យា</a>
+                <a href="#submit-post">បញ្ចូលព័ត៌មាន</a>
+                <a href="#contact">ទំនាក់ទំនង</a>
+            </div>
+
+
+            <div>
+                <h3>ប្រភេទអត្ថបទ</h3>
+
+                <a href="#education" class="topic-filter">ការសរសេរកូដ</a>
+                <a href="#news" class="topic-filter">AI និងបច្ចេកវិទ្យា</a>
+                <a href="#education" class="topic-filter">គន្លឹះសិក្សា</a>
+                <a href="#education" class="topic-filter">អាជីព</a>
+            </div>
+
+
+            <div>
+                <h3>ទំនាក់ទំនង</h3>
+                <p>អ៊ីមែល៖ <a href="mailto:imkasth98@gmail.com" style="display:inline;color:inherit;text-decoration:underline;">imkasth98@gmail.com</a></p>
+                <p>ទូរស័ព្ទ៖ <a href="tel:+855975445513" style="display:inline;color:inherit;text-decoration:underline;">+855 97 544 551 3</a></p>
+                <p>ភ្នំពេញ ប្រទេសកម្ពុជា</p>
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            <p>
+                © ២០២៦ EduNews។ រក្សាសិទ្ធិគ្រប់យ៉ាង។
+            </p>
+        </div>
+
+    </footer>
+
+    <div class="modal" id="article-reader" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-card">
+            <button class="modal-close" type="button" aria-label="បិទ" data-close-modal>×</button>
+            <p class="small-title">អត្ថបទ EduNews</p>
+            <h2 id="modal-title"></h2>
+            <p id="modal-content"></p>
+            <a class="btn modal-read-page" id="modal-read-page" href="article.html">អានអត្ថបទពេញ →</a>
+
+            <!-- Reader Comments Section -->
+            <div class="modal-comments">
+                <hr class="modal-divider">
+                <h3 class="modal-comments-title">💬 មតិយោបល់របស់អ្នកអាន (<span id="comment-count">0</span>)</h3>
+                <div id="comment-list" class="comment-list">
+                    <p class="no-comments">មិនទាន់មានមតិយោបល់នៅឡើយទេ។ សូមក្លាយជាអ្នកដំបូងដែលបញ្ចេញមតិ!</p>
+                </div>
+
+                <form id="comment-form" class="comment-form" novalidate>
+                    <h4>បន្ថែមមតិយោបល់របស់អ្នក</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="comment-author" placeholder="ឈ្មោះរបស់អ្នក *" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="comment-text" rows="2" placeholder="សរសេរមតិយោបល់របស់អ្នកនៅទីនេះ..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-comment">ផ្ញើមតិយោបល់</button>
+                    <div id="comment-alert" class="submit-alert" hidden></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

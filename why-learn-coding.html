@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ហេតុអ្វីសិស្សគួររៀនសរសេរកម្មវិធី | EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('edunews-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a class="logo" href="index.html"><span>Edu</span>News by sith</a>
+            <nav>
+                <a href="index.html">ទំព័រដើម</a>
+                <a href="index.html#news">ព័ត៌មាន</a>
+                <a href="index.html#education">ការអប់រំ</a>
+                <a href="index.html#technology">បច្ចេកវិទ្យា</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" role="switch" aria-checked="false" aria-label="ប្តូរពន្លឺ / ងងឹត (Dark & Light Mode)" title="ប្តូរ Dark / Light Mode">
+                    <span class="theme-toggle-track" aria-hidden="true">
+                        <span class="theme-toggle-thumb">
+                            <span class="theme-icon sun-icon">☀️</span>
+                            <span class="theme-icon moon-icon">🌙</span>
+                        </span>
+                    </span>
+                    <span class="theme-toggle-label">ពន្លឺ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="container article-page-layout">
+            <article class="article-detail">
+                <a class="back-link" href="index.html#education">← ត្រឡប់ទៅអត្ថបទអប់រំ</a>
+                <p class="small-title">ការសរសេរកូដ · ៥ នាទីអាន</p>
+                <h1>ហេតុអ្វីសិស្សគួររៀនសរសេរកម្មវិធី</h1>
+                <p class="article-byline">ចេញផ្សាយថ្ងៃទី ២៤ កញ្ញា ២០២៦ · ដោយ EduNews</p>
+                <img class="article-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=85" alt="កូដនៅលើអេក្រង់កុំព្យូទ័រ">
+                <p>ការសរសេរកម្មវិធីជាជំនាញសម្រាប់អនាគត ដែលជួយសិស្សយល់ពីរបៀបដោះស្រាយបញ្ហា និងបង្កើតដំណោះស្រាយដោយខ្លួនឯង។ មិនចាំបាច់ចាប់ផ្តើមពីគម្រោងធំៗទេ។</p>
+                <h2>បង្កើនការគិតឡូជីខល</h2>
+                <p>ពេលសរសេរកូដ សិស្សត្រូវបំបែកបញ្ហាធំទៅជាជំហានតូចៗ ពិនិត្យកំហុស និងសាកល្បងវិធីថ្មីៗ។ ជំនាញនេះអាចប្រើបានក្នុងមុខវិជ្ជាជាច្រើន។</p>
+                <h2>បង្កើតស្នាដៃដែលមានប្រយោជន៍</h2>
+                <p>ចាប់ផ្តើមពីទំព័រវេបសាយតូចៗ ហ្គេម ឬកម្មវិធីគណនា។ ការរៀនតាមគម្រោងធ្វើឲ្យមេរៀនមានភាពជាក់ស្តែង និងបង្កើនទំនុកចិត្ត។</p>
+                <a class="btn" href="index.html#education">មើលអត្ថបទផ្សេងទៀត</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container copyright">
+            <p>© ២០២៦ EduNews។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+        </div>
+    </footer>
+</body>
+</html>

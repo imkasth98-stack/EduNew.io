@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>របៀបជ្រើសរើសអាជីព IT ដែលសមស្រប | EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('edunews-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a class="logo" href="index.html"><span>Edu</span>News by sith</a>
+            <nav>
+                <a href="index.html">ទំព័រដើម</a>
+                <a href="index.html#news">ព័ត៌មាន</a>
+                <a href="index.html#education">ការអប់រំ</a>
+                <a href="index.html#technology">បច្ចេកវិទ្យា</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" role="switch" aria-checked="false" aria-label="ប្តូរពន្លឺ / ងងឹត (Dark & Light Mode)" title="ប្តូរ Dark / Light Mode">
+                    <span class="theme-toggle-track" aria-hidden="true">
+                        <span class="theme-toggle-thumb">
+                            <span class="theme-icon sun-icon">☀️</span>
+                            <span class="theme-icon moon-icon">🌙</span>
+                        </span>
+                    </span>
+                    <span class="theme-toggle-label">ពន្លឺ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="container article-page-layout">
+            <article class="article-detail">
+                <a class="back-link" href="index.html#education">← ត្រឡប់ទៅអត្ថបទអប់រំ</a>
+                <p class="small-title">អាជីព · ៦ នាទីអាន</p>
+                <h1>របៀបជ្រើសរើសអាជីព IT ដែលសមស្រប</h1>
+                <p class="article-byline">ចេញផ្សាយថ្ងៃទី ២៥ កញ្ញា ២០២៦ · ដោយ EduNews</p>
+                <img class="article-cover" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85" alt="ក្រុមការងារពិភាក្សាអំពីបច្ចេកវិទ្យា">
+                <p>វិស័យ IT មានជម្រើសអាជីពជាច្រើន។ ការជ្រើសរើសផ្លូវដែលសមស្រប គួរចាប់ផ្តើមពីការយល់អំពីចំណាប់អារម្មណ៍ ចំណុចខ្លាំង និងរបៀបធ្វើការដែលអ្នកចូលចិត្ត។</p>
+                <h2>ស្គាល់ផ្លូវអាជីពសំខាន់ៗ</h2>
+                <p>អ្នកអាចស្វែងយល់ពីការអភិវឌ្ឍវេបសាយ វិទ្យាសាស្ត្រទិន្នន័យ បណ្តាញ និង Cloud, UX/UI design ឬសន្តិសុខសាយប័រ។ ផ្លូវនីមួយៗមានជំនាញ និងបញ្ហាដែលត្រូវដោះស្រាយខុសគ្នា។</p>
+                <h2>សាកល្បងមុនសម្រេចចិត្ត</h2>
+                <p>ធ្វើគម្រោងតូចៗ ចូលរួមវគ្គសិក្សាឥតគិតថ្លៃ និងសួរអ្នកដែលធ្វើការក្នុងវិស័យនោះ។ បទពិសោធន៍ជាក់ស្តែងនឹងជួយអ្នករកឃើញផ្លូវដែលសមនឹងខ្លួន។</p>
+                <a class="btn" href="index.html#education">មើលអត្ថបទផ្សេងទៀត</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container copyright">
+            <p>© ២០២៦ EduNews។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>អនាគតនៃការអប់រំក្នុងយុគសម័យឌីជីថល | EduNews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('edunews-theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a class="logo" href="index.html"><span>Edu</span>News by sith</a>
+            <nav>
+                <a href="index.html">ទំព័រដើម</a>
+                <a href="index.html#news">ព័ត៌មាន</a>
+                <a href="index.html#education">ការអប់រំ</a>
+                <a href="index.html#technology">បច្ចេកវិទ្យា</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" type="button" role="switch" aria-checked="false" aria-label="ប្តូរពន្លឺ / ងងឹត (Dark & Light Mode)" title="ប្តូរ Dark / Light Mode">
+                    <span class="theme-toggle-track" aria-hidden="true">
+                        <span class="theme-toggle-thumb">
+                            <span class="theme-icon sun-icon">☀️</span>
+                            <span class="theme-icon moon-icon">🌙</span>
+                        </span>
+                    </span>
+                    <span class="theme-toggle-label">ពន្លឺ</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="article-page">
+        <div class="container article-page-layout">
+            <article class="article-detail">
+                <a class="back-link" href="index.html">← ត្រឡប់ទៅទំព័រដើម</a>
+                <p class="small-title">អត្ថបទពិសេស · ៥ នាទីអាន</p>
+                <h1>អនាគតនៃការអប់រំក្នុងយុគសម័យឌីជីថល</h1>
+                <p class="article-byline">ចេញផ្សាយថ្ងៃទី ២២ កញ្ញា ២០២៦ · ដោយ EduNews</p>
+                <img class="article-cover" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1400&q=85" alt="សៀវភៅនៅលើតុសិក្សា">
+                <p>បច្ចេកវិទ្យាកំពុងផ្លាស់ប្តូររបៀបដែលសិស្សរៀន និងគ្រូបង្រៀន។ ពីថ្នាក់រៀនតាមអ៊ីនធឺណិតរហូតដល់ឧបករណ៍សហការ អ្នករៀនអាចចូលប្រើចំណេះដឹងបានគ្រប់ពេល និងគ្រប់ទីកន្លែង។</p>
+                <h2>ការរៀនដែលមានភាពបត់បែន</h2>
+                <p>វេទិកាឌីជីថលអនុញ្ញាតឱ្យសិស្សរៀនតាមល្បឿនរបស់ខ្លួន និងត្រឡប់ទៅមើលមេរៀនដែលពិបាកបានគ្រប់ពេល។ វាក៏ជួយគ្រូតាមដានការរីកចម្រើន និងផ្តល់មតិយោបល់បានលឿនជាងមុន។</p>
+                <h2>បច្ចេកវិទ្យាត្រូវប្រើដោយមានគោលដៅ</h2>
+                <p>ឧបករណ៍ល្អមិនអាចជំនួសការគិតវិភាគ និងទំនាក់ទំនងរបស់មនុស្សបានទេ។ ដូច្នេះ ការប្រើបច្ចេកវិទ្យាដែលមានប្រសិទ្ធភាព គួរតែភ្ជាប់ជាមួយការអនុវត្ត ការពិភាក្សា និងការណែនាំពីគ្រូ។</p>
+                <a class="btn" href="index.html#newsletter">ទទួលអត្ថបទថ្មីៗ</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container copyright">
+            <p>© ២០២៦ EduNews។ រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+        </div>
+    </footer>
+</body>
+</html>
